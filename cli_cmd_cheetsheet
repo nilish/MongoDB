@@ -1,3 +1,8 @@
+Bookmarks
+http://www.tutorialspoint.com/mongodb/mongodb_create_collection.htm
+https://mlab.com/databases/goynaadb
+
+
 Step 1 <first shell window>
 
 rtss-MacBook-Pro:mongodb-osx-x86_64-3.4.4 rts$ sudo ./bin/mongod
