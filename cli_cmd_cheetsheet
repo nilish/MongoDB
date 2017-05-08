@@ -1,0 +1,75 @@
+Step 1 <first shell window>
+
+rtss-MacBook-Pro:mongodb-osx-x86_64-3.4.4 rts$ sudo ./bin/mongod
+2017-05-07T08:36:06.427-0700 I CONTROL  [initandlisten] MongoDB starting : pid=2879 port=27017 dbpath=/data/db 64-bit host=rtss-MacBook-Pro.local
+2017-05-07T08:36:06.428-0700 I CONTROL  [initandlisten] db version v3.4.4
+2017-05-07T08:36:06.428-0700 I CONTROL  [initandlisten] git version: 888390515874a9debd1b6c5d36559ca86b44babd
+2017-05-07T08:36:06.428-0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 0.9.8zh 14 Jan 2016
+
+
+
+
+Step 2 <second shell window><connecting to mLab Instance>
+cd Documents/mongodb/mongodb-osx-x86_64-3.4.4/
+./bin/mongo --host ds123381.mlab.com --port 23381
+MongoDB shell version v3.4.4
+connecting to: mongodb://ds123381.mlab.com:23381/
+MongoDB server version: 3.2.12
+
+
+
+
+Step 3 <running shell commenads>
+rs-ds123381:PRIMARY> db.help()
+DB methods:
+	db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [ just calls db.runCommand(...) ]
+	db.auth(username, password)
+	db.cloneDatabase(fromhost)
+	db.commandHelp(name) returns the help for the command
+	db.copyDatabase(fromdb, todb, fromhost)
+	db.createCollection(name, { size : ..., capped : ..., max : ... } )
+	db.createView(name, viewOn, [ { $operator: {...}}, ... ], { viewOptions } )
+	db.createUser(userDocument)
+	db.currentOp() displays currently executing operations in the db
+	db.dropDatabase()
+	db.eval() - deprecated
+	db.fsyncLock() flush data to disk and lock server for backups
+	db.fsyncUnlock() unlocks server following a db.fsyncLock()
+	db.getCollection(cname) same as db['cname'] or db.cname
+	db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+	db.getCollectionNames()
+	db.getLastError() - just returns the err msg string
+	db.getLastErrorObj() - return full status object
+	db.getLogComponents()
+	db.getMongo() get the server connection object
+	db.getMongo().setSlaveOk() allow queries on a replication slave server
+	db.getName()
+	db.getPrevError()
+	db.getProfilingLevel() - deprecated
+	db.getProfilingStatus() - returns if profiling is on and slow threshold
+	db.getReplicationInfo()
+	db.getSiblingDB(name) get the db at the same server as this one
+	db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+	db.hostInfo() get details about the server's host
+	db.isMaster() check replica primary status
+	db.killOp(opid) kills the current operation in the db
+	db.listCommands() lists all the db commands
+	db.loadServerScripts() loads all the scripts in db.system.js
+	db.logout()
+	db.printCollectionStats()
+	db.printReplicationInfo()
+	db.printShardingStatus()
+	db.printSlaveReplicationInfo()
+	db.dropUser(username)
+	db.repairDatabase()
+	db.resetError()
+	db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into { cmdObj : 1 }
+	db.serverStatus()
+	db.setLogLevel(level,<component>)
+	db.setProfilingLevel(level,<slowms>) 0=off 1=slow 2=all
+	db.setWriteConcern( <write concern doc> ) - sets the write concern for writes to the db
+	db.unsetWriteConcern( <write concern doc> ) - unsets the write concern for writes to the db
+	db.setVerboseShell(flag) display extra information in shell output
+	db.shutdownServer()
+	db.stats()
+	db.version() current version of the server
